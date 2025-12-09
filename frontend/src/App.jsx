@@ -22,9 +22,8 @@ function App() {
     <main>
       <HomePage />
     </main>
-    <footer>
-      <Footer />
-    </footer>
+    
+    <Footer />
     </>
   )
 }
