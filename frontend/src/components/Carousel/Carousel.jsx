@@ -1,7 +1,7 @@
 import './Carousel.css';
 
 
-const Carousel = () => {
+const Carousel = ({ images }) => {
     return (
         <div id="carouselExampleIndicators" className="carousel slide custom_carousel h-100">
             <div className="carousel-indicators h-100">
@@ -10,15 +10,13 @@ const Carousel = () => {
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div className="carousel-inner h-100">
-                <div className="carousel-item active">
-                    <img src="/images/carousel/img1.jpg" className="d-block w-100 h-100 object-fit-cover" alt="..." />
-                </div>
-                <div className="carousel-item">
-                    <img src="/images/carousel/img2.jpg" className="d-block w-100 object-fit-cover" alt="..." />
-                </div>
-                <div className="carousel-item">
-                    <img src="/images/carousel/img3.jpg" className="d-block w-100 object-fit-cover" alt="..." />
-                </div>
+
+                { images.map((img_object, index ) => ( 
+                    <div key = {index} className={ index === 0 ? "carousel-item active" : "carousel-item"}>
+                        <img src={img_object.img_src} className="d-block w-100 h-100 object-fit-cover" alt="..." />
+                    </div>)
+                    ) 
+                }
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -28,7 +26,7 @@ const Carousel = () => {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
             </button>
-        </div>
+        </div >
     )
 }
 
