@@ -3,7 +3,7 @@ import './Carousel.css';
 
 const Carousel = ({ images }) => {
     return (
-        <div id="carouselExampleIndicators" className="carousel slide custom_carousel h-100">
+        <div id="carouselExampleIndicators" className="carousel slide custom_carousel h-100" data-bs-ride="carousel">
             <div className="carousel-indicators h-100">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -12,7 +12,7 @@ const Carousel = ({ images }) => {
             <div className="carousel-inner h-100">
 
                 { images.map((img_object, index ) => ( 
-                    <div key = {index} className={ index === 0 ? "carousel-item active" : "carousel-item"}>
+                    <div data-bs-interval="2000" key = {index} className={ index === 0 ? "carousel-item active" : "carousel-item"} >
                         <img src={img_object.img_src} className="d-block w-100 h-100 object-fit-cover" alt="..." />
                     </div>)
                     ) 
