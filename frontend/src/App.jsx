@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import HomePage from './pages/Home/HomePage';
 import AboutPage from './pages/About/AboutPage';
 
+import { Outlet } from 'react-router-dom';
 
 function App() {
 
@@ -19,10 +20,11 @@ function App() {
     <header>
       <Navbar />
     </header>
-    <main>
-      <HomePage />
-    </main>
     
+    <main>
+      <Outlet />
+    </main>
+
     <Footer />
     </>
   )
