@@ -7,6 +7,7 @@ import App from '../App';
 // importing the pages to be linked.
 import HomePage from '../pages/Home/HomePage';
 import AboutPage from '../pages/About/AboutPage';
+import ProductDetail from '../pages/ProductDetail/ProductDetail';
 
 // generating the router object providing array of 'path - page' pairs.
 // This helps store the mapping of each path to their respective pages to 
@@ -24,6 +25,11 @@ const my_router = createBrowserRouter(
                 {
                     path: '/about',
                     element: <AboutPage />
+                },
+                {
+                    path: '/product/:id',
+                    element: <ProductDetail />
+
                 }
             ]
         }
